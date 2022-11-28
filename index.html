@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>Count Characters
+      You are given a string 
+      S
+      , and your task is to return an array 
+      B
+       
+      (
+      having a size of 
+      2
+      )
+      , where 
+      B
+      [
+      0
+      ]
+       contains the count of character A (uppercase) in string S and 
+      B
+      [
+      1
+      ]
+       contains the count of character D (uppercase) in string S.</fieldset>
+
+  <pre>
+    const countCharacters = (S) => 
+    {
+      
+      const arr = [0,0];
+      for(let i=0;i<S.length;i++){
+        if(S.charCodeAt(i)===65){
+          arr[0] += 1;
+          
+        }
+        else if(S.charCodeAt(i)===68){
+          arr[1] += 1;
+        }
+      }
+      
+      return arr;
+        
+    };
+ 
+
+  </pre>
+
+
+  <fieldset>Count the Heads
+    Tina is given a string  S which contains the first letter of all the student names in her class. She got a curiosity to check how many people have their names starting from the same alphabet. So given a string  S , she decided to write a code that finds out the count of characters that occur more than once in the string.</fieldset>
+  <pre>
+    var Count_Occ = (s) => 
+    {
+      const arr = s.split('');
+      arr.sort();
+      let res = "";
+      counter = 1;
+      for(let i=0;i<s.length-1;i++){
+        if(arr[i+1]===arr[i]){
+          counter += 1;
+        }
+        else{
+          if(counter>=2){
+            res += arr[i]+counter;
+            counter = 1;
+          }
+          
+        }
+      }
+      
+      return res;
+        
+    };
+ 
+  </pre>
+
+
+  <fieldset>Count the Vowels
+    You are given a string 
+    S
+     containing both uppercase and lowercase letters. You need to find out the number of vowels in the given string.</fieldset>
+
+    <pre>
+      var Count_Vowels= (S) => 
+      {
+        let vowels = 0;
+        
+        for(let i=0;i<S.length;i++){
+          if(S[i].toLowerCase()==='a'||S[i].toLowerCase()==='e'||S[i].toLowerCase()==='i'||S[i].toLowerCase()==='o'||S[i].toLowerCase()==='u'){
+            vowels += 1;
+          }
+        }
+        
+        return vowels;
+            
+      };
+    </pre>
+
+    <fieldset>Concatenate the Strings
+      You are given two strings 
+      S
+      1
+       and 
+      S
+      2
+       (containing both uppercase and lowercase letters), You need to retrun a string which is the concatenation of both the given strings. </fieldset>
+
+      <pre>
+        var Concatenate_Strings = (S1, S2) => 
+        {
+          return S1+S2;
+              
+        };
+        
+
+      </pre>
+
+      <fieldset>Find Length
+        You are given a string 
+        S
+        , and your task is to return the length of the string 
+        S
+        .
+        
+        Note: You have to solve it without using length method. You have to complete findLength function. No need to take any input.</fieldset>
+
+        <pre>
+
+          const findLength = (S) => 
+{
+    return S.length;
+};
+ 
+
+        </pre>
+
+        <fieldset>Find the Winner
+          You are given a string 
+          S
+           consisting of two letters 
+          A
+           and 
+          D
+          ,where each character represent the winner of N games played between Aditya and Danish, where letter 
+          A
+           represents the win of Aditya and letter 
+          D
+           represents the win of Danish. 
+          You need to find out the that which player wins the maximum number of games or there is a draw between them.</fieldset>
+
+          <pre>
+            var Game_Winner = (S) => 
+            {
+              let Aditya = 0;
+              let Danish = 0;
+              for(let i=0;i<S.length;i++){
+                if(S[i]==="A"){
+                  Aditya += 1;
+                }
+                else{
+                  Danish += 1;
+                }
+              }
+              
+              if(Aditya>Danish){
+                return "Aditya"
+              }
+              
+              else if(Danish>Aditya){
+                return "Danish"
+              }
+              
+              else{
+                return "Draw"
+              }
+              
+            }
+ 
+
+          </pre>
+
+          <fieldset>Join Strings
+            You are given two strings 
+            S
+             and 
+            P
+            , and your task is to concatenate them and return the concatenated string.</fieldset>
+
+            <pre>
+
+              const joinStrings = (S, P) => 
+              {
+                  return S+P
+              };
+ 
+
+            </pre>
+
+            <fieldset>Plaindrome Check
+              You are given a string 
+              S
+              , Your task is to check wether the given string is a 
+              P
+              a
+              l
+              i
+              n
+              d
+              r
+              o
+              m
+              e
+               or not.</fieldset>
+
+               <pre>
+
+                var Palin_Check = (str) =>
+                {
+                  
+                  str = str.toLowerCase();
+                  for(let i=0;i<parseInt((str.length)/2);i++){
+                    if(str[i]!==str[str.length-1-i]){
+                      return "False"
+                    }
+                    
+                  }
+                  return "True"
+                  
+                }
+               </pre>
+
+
+               <fieldset>Reverse the String
+                You are given a string 
+                S
+                , Your task is to Reverse the string.
+                String can contain both upppercase lowercase letters. </fieldset>
+
+                <pre>
+                  var Reverse_String = (str) => 
+                  {
+                    
+                    let rev_str = "";
+                    for(let i=str.length-1;i>=0;i--){
+                      rev_str += str[i];
+                    }
+                    return rev_str;
+                  };
+ 
+
+                </pre>
+
+
+                <fieldset>Match the Strings
+                  You are given two strings 
+                  S
+                  1
+                   and 
+                  S
+                  2
+                  , Your task is to print 
+                  Y
+                  E
+                  S
+                   if both strings are same else print 
+                  N
+                  O
+                  .</fieldset>
+
+                  <pre>
+
+                    var String_Match = (S1,S2) => 
+                    {
+                      if(S1===S2){
+                        return "YES"
+                      }
+                      else{
+                        return "NO"
+                      }
+                          
+                    };
+                  </pre>
+
+
+                  <fieldset>String Replace
+                    You are given a string 
+                    S
+                    , along with a pattern string and a text string. 
+                    You need to repalce the pattern string in 
+                    S
+                     to the text string.</fieldset>
+
+
+                     <pre>
+                      var Replace = (S, pattern , text) => 
+                        {
+                          let ans = ""
+                          let index = S.search(pattern);
+                          
+                          for(let i=0;i<index;i++){
+                            ans += S[i]
+                            
+                          }
+                          
+                          ans += text;
+                          
+                          for(let i=index+pattern.length;i<S.length;i++){
+                            ans += S[i]
+                          }
+                          
+                          return ans
+                              
+                        };
+ 
+                     </pre>
+
+
+                     <fieldset>Split the String
+                      You are given a string 
+                      S
+                      , Your task is to split the string with respect to spaces.
+                      
+                      Note: You have to complete Split_the_String function. No need to take any input.</fieldset>
+
+
+                      <pre>
+
+                        var Split_the_string = (S) => 
+                        {
+                          return S.split(' ')
+                                
+                        };
+                        
+
+                      </pre>
+
+                      <fieldset>Count the Vowels and Consonants
+                        You are given a string 
+                        S
+                         containing both uppercase and lowercase letters. 
+                        You need to find out the number of vowels and the number of consonants in the given string.</fieldset>
+
+                        <pre>
+                          var Count_Vowels= (S) => 
+                          {
+                            let vowels = 0;
+                            
+                            for(let i=0;i<S.length;i++){
+                              if(S[i].toLowerCase()==='a'||S[i].toLowerCase()==='e'||S[i].toLowerCase()==='i'||S[i].toLowerCase()==='o'||S[i].toLowerCase()==='u'){
+                                vowels += 1;
+                              }
+                            }
+                            
+                            return vowels;
+                                
+                          };
+                          var Count_Consonants= (S) => 
+                          {
+                            
+                            return S.length-Count_Vowels(S);
+                                
+                          };
+ 
+                        </pre>
+</body>
+</html>
